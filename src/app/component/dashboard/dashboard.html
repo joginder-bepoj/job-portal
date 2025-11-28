@@ -1,0 +1,90 @@
+<div class="dashboard">
+    <div class="main-search-bar">
+      <div class="search-field">
+        <span class="icon">🔍</span>
+        <input type="text" placeholder="Job title, keywords, or company" />
+      </div>
+    
+      <div class="divider"></div>
+    
+      <div class="search-field">
+        <span class="icon">📍</span>
+        <input type="text" placeholder='City, state, zip code, or "remote"' />
+      </div>
+    
+      <button class="search-btn">Find jobs</button>
+    </div>
+    <div class="container">
+        <h2 class="section-title">Jobs for you</h2>
+        <div class="layout">
+          <!-- LEFT JOB LIST -->
+          <div class="left">
+            @for(job of jobs; track $index){
+                <div
+                  class="job-card"
+                  (click)="showDetails(job)"
+                  [class.active]="selectedJob?.id === job.id"
+                >
+                  <div class="top-row">
+                    <h3 class="job-title">{{ job.title }}</h3>
+                    <span class="icon">›</span>
+                  </div>
+            
+                  <p class="company">{{ job.company }}</p>
+                  <p class="location">{{ job.location }}</p>
+            
+                  <p class="salary">{{ job.salary }}</p>
+            
+                  <div class="tags">
+                    @for(tag of job.tags; track $index){
+                    <span>{{ tag }}</span>
+                    }
+                  </div>
+                </div>
+            }
+          </div>
+        
+          <!-- RIGHT JOB DETAILS -->
+          @if(selectedDetails){
+          <div class="right">
+            <div class="header">
+              <h2>{{ selectedDetails.title }}</h2>
+              <button class="apply-btn">Apply Now</button>
+            </div>
+            <p class="company">{{ selectedDetails.company }}</p>
+            <p class="location">{{ selectedDetails.location }}</p>
+            <p class="salary">{{ selectedDetails.salary }}</p>
+            <hr />
+            <!-- INSIGHTS -->
+            <div class="insights">
+              <h3>Profile Insights</h3>
+        
+              <div class="block">
+                <h4>Skills</h4>
+                <div class="chip-list">
+                  @for (s of selectedDetails.profileInsights.skills; track $index) {
+                  <span class="chip">{{ s }}</span>
+                  }
+                </div>
+              </div>
+        
+              <div class="block">
+                <h4>Languages</h4>
+                <div class="chip-list">
+                  @for(lang of selectedDetails.profileInsights.languages; track $index){
+                  <span class="chip">{{ lang }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+        
+            <hr />
+        
+            <!-- FULL DESCRIPTION -->
+            <h3>Full Job Description</h3>
+            <div class="description" [innerHTML]="selectedDetails.fullDescription"></div>
+          </div>
+          }
+        </div>
+    </div>
+</div>

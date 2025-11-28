@@ -1,0 +1,192 @@
+.company-section {
+  padding: 20px 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.company-card {
+  background: #fff;
+  min-width: 200px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  transition: 0.3s;
+  cursor: pointer;
+  flex: 1;
+  text-align: left;
+}
+
+.company-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.company-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.company-card p {
+  color: #1282a2;
+  font-weight: 500;
+}
+
+/* Carousel Background */
+.carousel-inner {
+  padding: 20px 20px;
+  background: #e8e8e8;
+  border-radius: 18px;
+}
+
+.companies-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* CATEGORY CAROUSEL */
+.category-carousel {
+  margin-bottom: 20px;
+}
+.carousel-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+.carousel-item {
+  min-width: 140px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: #e8e8e8;
+  cursor: pointer;
+  transition: 0.3s;
+  overflow-x: scroll;
+   scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-item::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item img {
+  width: 50px;
+  height: 50px;
+}
+
+/* LAYOUT */
+.layout {
+  display: grid;
+  grid-template-columns: 260px auto;
+  gap: 20px;
+}
+
+/* FILTERS */
+.filters {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  height: fit-content;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+.filter-group {
+  margin-bottom: 15px;
+}
+.filter-header {
+  font-weight: bold;
+  cursor: pointer;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ddd;
+}
+.filter-body {
+  padding-top: 10px;
+}
+.filter-body label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* COMPANY LIST */
+.company-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 15px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.company-card:hover {
+  transform: scale(1.02);
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+}
+
+.info {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rating {
+  margin-top: 4px;
+  color: #333;
+}
+
+.small {
+  font-size: 12px;
+  color: #777;
+}
+
+.tags span {
+  background: #eef3ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.details div {
+  font-size: 13px;
+  margin-top: 3px;
+  color: #555;
+}
+
+.business-types span {
+  background: #c9f7d9;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-right: 6px;
+  font-size: 12px;
+}
+
+.arrow {
+  font-size: 24px;
+  padding-right: 10px;
+  color: #888;
+  margin-left: 20px;
+}
+
+.company-list{
+    display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 10px;
+}

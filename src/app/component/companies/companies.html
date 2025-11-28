@@ -1,0 +1,94 @@
+<div class="company-section">
+  <div class="container">
+    <h2 class="section-title mt-3">Top companies hiring now</h2>
+
+    <div id="companyCarousel" class="carousel slide mb-5 mt-2" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <div class="d-flex justify-content-between gap-5 px-3">
+
+        @for (item of companyList; track $index) {
+          <div class="company-card">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.count }} Companies</p>
+          </div>
+        }
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- <div class="category-carousel">
+      <div class="carousel-container">
+        @for(cat of categories; track $index){
+            <div class="carousel-item">
+              <img src="assets/images/c-logo.gif" alt="cat" />
+              <span>{{ cat }}</span>
+            </div>
+        }
+      </div>
+    </div> -->
+
+    <div class="layout">
+      <!-- LEFT FILTERS -->
+      <aside class="filters">
+        @for( f of filterOptions; track $index){
+        <div class="filter-group">
+          <div class="filter-header" (click)="f.open = !f.open">
+            <span>{{ f.label }}</span>
+            <i class="arrow" [class.open]="f.open"></i>
+          </div>
+
+          @if(f.open){
+          <div class="filter-body">
+            @for(opt of f.options; track $index){
+            <label> <input type="checkbox" /> {{ opt }} </label>
+            }
+          </div>
+          }
+        </div>
+        }
+      </aside>
+
+      <!-- RIGHT COMPANY LIST -->
+      <main class="company-list">
+        @for(c of companies; track $index){
+        <div class="company-card">
+          <div class="logo">
+            <img src="images/c-logo.gif" alt="logo" />
+          </div>
+
+          <div class="info">
+            <h3>{{ c.name }}</h3>
+
+            <div class="rating">
+              ⭐ {{ c.rating }} <span class="small">({{ c.reviews }} reviews)</span>
+            </div>
+
+            <div class="tags">
+              <span>{{ c.tag }}</span>
+            </div>
+
+            <div class="details">
+              <div>{{ c.industry }}</div>
+              <div>Founded: {{ c.founded }}</div>
+              <div>{{ c.employees }} employees</div>
+            </div>
+
+            <div class="business-types">
+              @for(bt of c.business; track $index){
+              <span>{{ bt }}</span>
+              }
+            </div>
+          </div>
+
+          <div class="arrow">→</div>
+        </div>
+        }
+      </main>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,240 @@
+.main-search-bar {
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  margin: 30px auto;
+  padding: 10px 14px;
+  border-radius: 45px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.3s ease;
+
+  &:focus-within {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .search-field {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    .icon {
+      font-size: 18px;
+      color: #6b7280;
+      margin-right: 10px;
+    }
+
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      color: #374151;
+
+      &::placeholder {
+        color: #9ca3af;
+      }
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 28px;
+    background: #e5e7eb;
+  }
+
+  .search-btn {
+    background: #1282a2;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 35px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background: #1282a2;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* MAIN LAYOUT */
+.layout {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* LEFT PANEL */
+.left {
+  width: 32%;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.job-card {
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e4e4e4;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  background: #fafdff;
+  border-color: #1282a2;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.job-card.active {
+  border-color: #1282a2;
+  background: #e8f8ff;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  font-size: 22px;
+  opacity: 0.4;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.company {
+  margin: 4px 0 0 0;
+  color: #3a3a3a;
+  font-weight: 500;
+}
+
+.location {
+  font-size: 13px;
+  color: #666;
+}
+
+.salary {
+  margin-top: 5px;
+  font-weight: 600;
+  color: #0083c9;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tags span {
+  background: #eef8ff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-right: 6px;
+  font-size: 12px;
+}
+
+.right {
+    width: 66%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e3e3e3;
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox hides scrollbar */
+    position: relative;
+}
+
+/* Hide scrollbar initially */
+.right::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+/* Scrollbar track */
+.right::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 4px 0;
+    border-radius: 10px;
+}
+
+/* Scrollbar thumb (hidden by default) */
+.right::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+    transition: background-color 0.4s ease;
+}
+
+/* Show scrollbar only on hover */
+.right:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);  /* attractive light grey */
+}
+
+/* On active scroll – darker */
+.right::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* HEADER INSIDE RIGHT */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apply-btn {
+  background: #1282a2;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.apply-btn:hover {
+  background: #0c5a72;
+}
+
+/* CHIPS */
+.chip-list {
+  margin-top: 8px;
+}
+
+.chip {
+  background: #eef6ff;
+  padding: 6px 10px;
+  display: inline-block;
+  margin: 3px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* DESCRIPTION */
+.description {
+  padding-top: 10px;
+  line-height: 1.7;
+  font-size: 15px;
+  white-space: pre-line;
+}
