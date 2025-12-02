@@ -1,0 +1,142 @@
+/* ---------- Page Layout ---------- */
+.signup-wrapper {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ---------- Main heading ---------- */
+.signup-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2a2a2a;
+}
+
+/* ---------- Form Controls ---------- */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1.5px solid #d9d9d9;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #1282a2;
+  box-shadow: 0px 0px 0px 3px rgba(58, 99, 243, 0.15);
+  outline: none;
+}
+
+/* ---------- Work Status Cards ---------- */
+.status-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.status-card {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid #e2e2e2;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.25s;
+  background: #fafafa;
+}
+
+.status-card:hover {
+  border-color: #7493ff;
+  background: #f0f4ff;
+}
+
+.status-card.active {
+  border-color: #1282a2;
+  background: #e9efff;
+}
+
+.status-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #2a2a2a;
+}
+
+.status-card p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ---------- Resume Upload Button ---------- */
+.resume-upload {
+  padding: 12px;
+  border: 1.5px dashed #bfbfbf;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  background: #fafafa;
+  transition: 0.2s;
+}
+
+.resume-upload:hover {
+  border-color: #1282a2;
+  background: #f4f7ff;
+}
+
+/* ---------- Checkbox Row ---------- */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ---------- Submit Button ---------- */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1282a2;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: 0.25s;
+}
+
+.submit-btn:hover {
+  background: #1282a2;
+}
+
+/* ---------- Error Messages ---------- */
+.error-message {
+  font-size: 12px;
+  color: #e63946;
+  margin-top: 4px;
+}
