@@ -1,99 +1,99 @@
-.login-container {
+.otp-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #d5d9ff, #f4f5ff);
+  background: linear-gradient(135deg, #e2e8ff, #f7f8ff);
   padding: 20px;
 }
 
-.login-card {
+.otp-card {
   background: #ffffff;
   width: 100%;
   max-width: 420px;
   padding: 35px 30px;
   border-radius: 18px;
-  box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
   animation: fadeIn 0.4s ease-in-out;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
-  text-align: center;
   margin-bottom: 8px;
-  color: #2b2b2b;
+  color: #2a2a2a;
 }
 
 .subtitle {
-  text-align: center;
-  color: #666;
   font-size: 14px;
-  margin-bottom: 30px;
+  color: #555;
+  margin-bottom: 25px;
 }
 
-.form-group {
-  margin-bottom: 22px;
+.otp-input-group {
+  margin-bottom: 25px;
+  text-align: left;
 
   label {
-    font-size: 14px;
     color: #555;
     font-weight: 500;
     margin-bottom: 6px;
     display: block;
   }
 
-  input {
+  .otp-input {
     width: 100%;
     padding: 12px 15px;
-    border: 1.6px solid #ccc;
     border-radius: 10px;
-    font-size: 15px;
-    transition: 0.25s ease;
+    border: 1.5px solid #d1d1d1;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-align: center;
+    transition: 0.2s;
 
     &:focus {
       border-color: #1282a2;
-      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
       outline: none;
     }
   }
 }
 
-.btn.login-btn {
+.btn {
   width: 100%;
   padding: 12px;
-  background: #1282a2;
-  border: none;
-  color: #fff;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  margin-bottom: 12px;
   transition: 0.2s ease-in-out;
+}
+
+.verify-btn {
+  background: #1282a2;
+  color: #fff;
+  border: none;
 
   &:hover {
     background: #1282a2;
   }
 }
 
-.signup-link {
-  text-align: center;
-  margin-top: 15px;
-  color: #444;
+.resend-btn {
+  background: transparent;
+  border: 1.5px solid #1282a2;
+  color: #1282a2;
 
-  a {
-    color: #1282a2;
-    font-weight: 600;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
+  &:hover {
+    background: #1282a2;
+    color: #fff;
   }
 }
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }

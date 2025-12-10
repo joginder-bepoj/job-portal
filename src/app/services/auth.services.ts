@@ -20,4 +20,12 @@ export class AuthService {
   loginUser(payload: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, payload);
   }
+
+  verifyOtp(data: any) {
+  return this.http.post('https://sandbox.bepoj.com/jobsportalapi/public/api/verifyOtp', data);
+}
+
+resendOtp(data: any) {
+  return this.http.post('https://sandbox.bepoj.com/jobsportalapi/public/api/resendotp', data);
+}
 }

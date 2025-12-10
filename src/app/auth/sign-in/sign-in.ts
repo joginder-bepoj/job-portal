@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.services';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class SignIn {
   uploadedResume: File | null = null;
   resumeFile: File | null = null;
 
-  constructor(private fb: FormBuilder, private auth: AuthService) {}
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.signupForm = this.fb.group({
@@ -40,29 +41,35 @@ export class SignIn {
 
   // Submit & Call API
   submitSignup() {
-    if (this.signupForm.invalid) {
-      this.signupForm.markAllAsTouched();
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('full_name', this.signupForm.get('fullName')?.value);
-    formData.append('email', this.signupForm.get('email')?.value);
-    formData.append('password', this.signupForm.get('password')?.value);
-    formData.append('mobile', this.signupForm.get('mobile')?.value);
-    formData.append('work_status', this.signupForm.get('workStatus')?.value);
-    formData.append('role', this.signupForm.get('role')?.value);
-
-    // ---- Call API ----
-    this.auth.registerUser(formData).subscribe({
-      next: (res:any) => {
-        console.log("Signup Success:", res);
-        alert("Registration successful!");
-      },
-      error: (err:any) => {
-        console.error("Signup Error:", err);
-        alert("Registration failed!");
-      }
-    });
+  if (this.signupForm.invalid) {
+    this.signupForm.markAllAsTouched();
+    return;
   }
+
+  const formData = new FormData();
+  formData.append('full_name', this.signupForm.get('fullName')?.value);
+  formData.append('email', this.signupForm.get('email')?.value);
+  formData.append('password', this.signupForm.get('password')?.value);
+  formData.append('mobile', this.signupForm.get('mobile')?.value);
+  formData.append('work_status', this.signupForm.get('workStatus')?.value);
+  formData.append('role', this.signupForm.get('role')?.value);
+
+  this.auth.registerUser(formData).subscribe({
+    next: (res: any) => {
+      console.log("Signup Success:", res);
+
+      const email = this.signupForm.get('email')?.value;
+
+      // 👉 Redirect to OTP page with email
+      this.router.navigate(['/verify-otp'], {
+        queryParams: { email }
+      });
+    },
+    error: (err: any) => {
+      console.error("Signup Error:", err);
+      alert("Registration failed!");
+    }
+  });
+}
+
 }
