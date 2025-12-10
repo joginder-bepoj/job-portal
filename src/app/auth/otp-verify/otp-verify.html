@@ -1,0 +1,34 @@
+<div class="otp-container">
+  <div class="otp-card">
+
+    <h2>Email Verification</h2>
+
+    <p class="subtitle">
+      We’ve sent a 6-digit verification code to <b>{{ email }}</b>
+    </p>
+
+    <form [formGroup]="otpForm" (ngSubmit)="verifyOTP()">
+
+      <div class="otp-input-group">
+        <label>Enter OTP</label>
+        <input
+          type="text"
+          maxlength="6"
+          formControlName="otp"
+          class="otp-input"
+          placeholder="••••••"
+        />
+      </div>
+
+      <button type="submit" class="btn verify-btn">
+        Verify OTP
+      </button>
+
+      <button type="button" class="btn resend-btn" (click)="resendOTP()">
+        Resend OTP
+      </button>
+
+    </form>
+
+  </div>
+</div>

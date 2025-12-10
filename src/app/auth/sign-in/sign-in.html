@@ -1,0 +1,68 @@
+<div class="signup-wrapper">
+  <h2 class="signup-title">Create Your Account</h2>
+
+  <form [formGroup]="signupForm" (ngSubmit)="submitSignup()">
+
+    <!-- Full Name -->
+    <div class="form-group">
+      <label>Full Name*</label>
+      <input type="text" formControlName="fullName" placeholder="Enter your full name">
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label>Email*</label>
+      <input type="email" formControlName="email" placeholder="Enter your email">
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label>Password*</label>
+      <input type="password" formControlName="password" placeholder="Min 6 characters">
+    </div>
+
+    <!-- Mobile -->
+    <div class="form-group">
+      <label>Mobile Number*</label>
+      <input type="tel" formControlName="mobile" placeholder="Enter your mobile number">
+    </div>
+
+    <!-- Work Status -->
+    <label>Work Status*</label>
+    <div class="status-container">
+      <div class="status-card"
+           [class.active]="selectedStatus=='experienced'"
+           (click)="selectStatus('experienced')">
+        <h4>I'm Experienced</h4>
+        <p>I have work experience</p>
+      </div>
+
+      <div class="status-card"
+           [class.active]="selectedStatus=='fresher'"
+           (click)="selectStatus('fresher')">
+        <h4>I'm a Fresher</h4>
+        <p>I haven’t worked after graduation</p>
+      </div>
+    </div>
+
+    <!-- Resume Upload -->
+    <div class="form-group">
+      <label>Upload Resume</label>
+      <div class="resume-upload">
+        <input type="file" (change)="onResumeUpload($event)">
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    <div class="checkbox-wrapper">
+      <input type="checkbox" formControlName="alerts">
+      <label>Send me job updates and alerts</label>
+    </div>
+
+    <!-- Submit -->
+    <button class="submit-btn" type="submit">
+      Register Now
+    </button>
+
+  </form>
+</div>
