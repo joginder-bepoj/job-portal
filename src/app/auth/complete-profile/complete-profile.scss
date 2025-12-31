@@ -1,0 +1,6 @@
+.complete-wrapper { max-width: 520px; margin: 0 auto; padding: 16px; }
+.form-group { margin-bottom: 12px; }
+.status-container { display:flex; gap:8px; margin-bottom:12px; }
+.status-card { border:1px solid #ddd; padding:8px; cursor:pointer; }
+.status-card.active { border-color:#007bff; }
+.error { color: #d9534f; }

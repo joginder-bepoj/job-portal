@@ -4,6 +4,7 @@ import { Companies } from './component/companies/companies';
 import { SignIn } from './auth/sign-in/sign-in';
 import { OtpVerify } from './auth/otp-verify/otp-verify';
 import { LoginIn } from './auth/login-in/login-in';
+import { CompleteProfile } from './auth/complete-profile/complete-profile';
 
 export const routes: Routes = [
   {
@@ -30,5 +31,9 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginIn
+  },
+  {
+    path: 'complete-profile',
+    component: CompleteProfile
   }
 ];

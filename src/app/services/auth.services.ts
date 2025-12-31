@@ -28,4 +28,12 @@ export class AuthService {
 resendOtp(data: any) {
   return this.http.post('https://sandbox.bepoj.com/jobsportalapi/public/api/resendotp', data);
 }
-}
+  // Social login: send Google id_token (credential) to backend for verification
+  socialLogin(payload: any) {
+    return this.http.post(`${this.baseUrl}/google-login`, payload);
+  }
+
+  // Update profile after social login if backend requires more details
+  updateProfile(payload: any) {
+    return this.http.post(`${this.baseUrl}/update-profile`, payload);
+  }}
