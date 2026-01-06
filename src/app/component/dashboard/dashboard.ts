@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { JOB_LIST } from './jobs';
 import { JOB_DETAILS } from './job-details';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
