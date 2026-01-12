@@ -35,7 +35,7 @@ export class SignIn implements AfterViewInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       mobile: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
       workStatus: ['', Validators.required],
-      role: ['jobseeker'],   // Default role
+      role: ['admin'],
       alerts: [false]
     });
   }

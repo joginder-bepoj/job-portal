@@ -1,11 +1,8 @@
 <div class="login-container">
   <div class="login-card">
-
     <h2>Welcome Back 👋</h2>
     <p class="subtitle">Login to continue your journey</p>
-
     <form [formGroup]="loginForm" (ngSubmit)="login()">
-
       <div class="form-group">
         <label>Email</label>
         <input
@@ -14,7 +11,6 @@
           placeholder="Enter your email"
         />
       </div>
-
       <div class="form-group">
         <label>Password</label>
         <input
@@ -23,15 +19,11 @@
           placeholder="Enter your password"
         />
       </div>
-
       <button type="submit" class="btn login-btn">Login</button>
-
       <p class="signup-link">
         Don’t have an account?
         <a routerLink="/signin">Create one</a>
       </p>
-
     </form>
-
   </div>
 </div>

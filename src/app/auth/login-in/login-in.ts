@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.services';
 
 @Component({
   selector: 'app-login-in',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login-in.html',
   styleUrl: './login-in.scss',
 })
@@ -27,7 +27,6 @@ export class LoginIn {
       this.loginForm.markAllAsTouched();
       return;
     }
-
     this.isLoading = true;
 
     const payload = {
@@ -35,22 +34,15 @@ export class LoginIn {
       password: this.loginForm.get('password')?.value,
     };
 
-    this.auth.loginUser(payload).subscribe({
+    this.auth.loginUser(this.loginForm.value).subscribe({
       next: (res: any) => {
-        console.log('Login Success:', res);
-
-        // 👉 Save token if backend returns it
-        if (res.token) {
-          localStorage.setItem('token', res.token);
+        if (res.status && res.user) {
+          this.auth.setUser(res.user);
+          this.router.navigate(['/dashboard']);
         }
-
         this.isLoading = false;
-
-        // 👉 Redirect to dashboard
-        this.router.navigate(['/dashboard']);
       },
-      error: (err: any) => {
-        console.error('Login Error:', err);
+      error: () => {
         alert('Invalid email or password');
         this.isLoading = false;
       },
