@@ -1,9 +1,34 @@
 <div class="admin-layout">
+
+  <!-- SIDEBAR -->
   <aside class="sidebar">
-  
+    <h3 class="logo">Admin Panel</h3>
+
+    <ul class="menu">
+      <li routerLink="/admin/dashboard" routerLinkActive="active">
+        📊 Dashboard
+      </li>
+      <li routerLink="/admin/users" routerLinkActive="active">
+        👤 Users
+      </li>
+      <li routerLink="/admin/jobs" routerLinkActive="active">
+        💼 Jobs
+      </li>
+      <li routerLink="/admin/companies" routerLinkActive="active">
+        🏢 Companies
+      </li>
+      <li routerLink="/admin/applications" routerLinkActive="active">
+        📄 Applications
+      </li>
+      <li routerLink="/admin/settings" routerLinkActive="active">
+        ⚙️ Settings
+      </li>
+    </ul>
   </aside>
 
+  <!-- CONTENT -->
   <main class="content">
     <router-outlet></router-outlet>
   </main>
+
 </div>
